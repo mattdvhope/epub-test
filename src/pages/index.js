@@ -4,7 +4,7 @@ import EpubReader from "../components/EpubReader";
 const IndexPage = () => {
   return (
     <div>
-      <EpubReader epubUrl="/Epub-dummy.epub" />
+      <EpubReader epubUrl="/The-Source-of-All-Wealth.epub" />
     </div>
   );
 };

@@ -1,35 +1,18 @@
-import React, { useEffect, useRef } from 'react';
-import Epub from 'epubjs';
+import React, { useState } from 'react';
+import { ReactReader } from 'react-reader';
 
-const EpubReader = ({ epubUrl }) => {
-  const viewerRef = useRef(null);
-  const bookRef = useRef(null);
+export const EpubReader = ({ epubUrl }) => {
+  const [location, setLocation] = useState(0); // Initialize location to 0
 
-  useEffect(() => {
-    const book = Epub(epubUrl);
-    bookRef.current = book; // Store book reference for later use
-
-    const rendition = book.renderTo(viewerRef.current, {
-      manager: "continuous",
-      // method: "continuous",
-      flow: "scrolled",
-      width: "100%",
-      height: "100vh",
-    });
-
-    book.ready.then(() => {
-      console.log("Book spine items:", book.spine.items);
-      rendition.display(book.spine.items[0].href); // Start with the first section
-    }).catch(err => {
-      console.error("Error loading book:", err);
-    });
-
-    return () => {
-      book.destroy(); // Clean up when the component unmounts
-    };
-  }, [epubUrl]); // useEffect
-
-  return <div id="viewer" ref={viewerRef} ></div>;
+  return (
+    <div style={{ height: '100vh' }}>
+      <ReactReader
+        url={epubUrl}                         // URL of the EPUB file
+        location={location}                   // Current location in the book
+        locationChanged={(epubcfi) => setLocation(epubcfi)} // Update location on change
+      />
+    </div>
+  );
 };
 
 export default EpubReader;
