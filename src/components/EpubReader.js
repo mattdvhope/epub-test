@@ -24,16 +24,6 @@ const EpubReader = ({ epubUrl }) => {
       console.error("Error loading book:", err);
     });
 
-    let currentSection;
-    rendition.on("rendered", (section) => {
-      console.log("Section rendered:", section.href);
-      if (currentSection) {
-        console.log("Unloading section:", currentSection.href);
-        // Perform cleanup or other actions for the previous section here
-      }
-      currentSection = section; // Update current section reference
-    });
-
     return () => {
       book.destroy(); // Clean up when the component unmounts
     };
