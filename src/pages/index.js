@@ -1,19 +1,12 @@
-import * as React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import Reader from "../components/Reader" // Import your Reader component
+import React from "react";
+import EpubReader from "../components/EpubReader";
 
-const IndexPage = () => (
-  <Layout>
-    <Reader /> {/* Use the Reader component to render the EPUB */}
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <div>
+      <EpubReader epubUrl="/The-Source-of-All-Wealth.epub" />
+    </div>
+  );
+};
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
-
-export default IndexPage
+export default IndexPage;
