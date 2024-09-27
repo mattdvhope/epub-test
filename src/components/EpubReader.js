@@ -14,8 +14,6 @@ export const EpubReader = ({ epubUrl }) => {
         epubOptions={{
           allowScriptedContent: true,
           allowPopups: false,
-          manager: 'paginated', // Use paginated flow
-          flow: "default", // Ensure you're using the default flow
         }}
       />
     </div>
