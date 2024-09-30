@@ -4,7 +4,7 @@ import EpubReader from "../components/EpubReader";
 const IndexPage  = () => {
   return (
     <div>
-      <EpubReader epubUrl="/Joes-Edited.epub" />
+      <EpubReader epubUrl="/Tarzan.epub" />
     </div>
   );
 };
