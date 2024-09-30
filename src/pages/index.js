@@ -18,13 +18,21 @@ const IndexPage = () => {
   }, []);
 
   const handleSignUp = async () => {
-    await signUp(email, password);
-    // Handle successful signup
+    try {
+      await signUp(email, password);
+      alert("Sign-up successful!");
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const handleSignIn = async () => {
-    await signIn(email, password);
-    // Handle successful signin
+    try {
+      await signIn(email, password);
+      alert("Sign-in successful!");
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (

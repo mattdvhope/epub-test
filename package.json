@@ -8,7 +8,6 @@
     "es5-ext": "0.10.63",
     "firebase": "^10.13.2",
     "gatsby": "^5.13.7",
-    "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
